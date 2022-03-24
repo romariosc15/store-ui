@@ -1,9 +1,11 @@
 import ProductCard from './../components/ProductCard';
 import Breadcrumb from './../components/Breadcrumb';
+import Filters from './../components/Filters';
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { Fragment } from 'react';
 
 import products from './../data/products';
+import categories from './../data/categories';
 
 const Products = () => {
     const ProductCards = products.map((v) =>
@@ -15,11 +17,11 @@ const Products = () => {
         <Fragment>
             <Breadcrumb title='Productos' routePath={['/products']} routeName={['Productos']} />
             <Box paddingY={'4rem'} paddingX={'8rem'}>
-                <Grid px={'4rem'} templateColumns='repeat(12, 1fr)' gap={4}>
+                <Grid px={'4rem'} templateColumns='repeat(10, 1fr)' gap={4}>
                     <GridItem colSpan={2}>
-                        Categorias
+                        <Filters categories={categories} />
                     </GridItem>
-                    <GridItem colSpan={10}>
+                    <GridItem colSpan={8}>
                         <Grid templateColumns='repeat(3, 1fr)' gap={6}>
                             {ProductCards}
                         </Grid>

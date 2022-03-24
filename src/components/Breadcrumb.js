@@ -5,7 +5,7 @@ import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 const Breadcrumb = (props) => {
     const { title, routePath, routeName } = props;
     const path = routeName.map((v, i) =>
-        <BreadcrumbItem>
+        <BreadcrumbItem key={i}>
             <BreadcrumbLink color={'#7e7e7e'} href={routePath[i]}>{v}</BreadcrumbLink>
         </BreadcrumbItem>
     );
