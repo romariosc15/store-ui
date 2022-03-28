@@ -9,6 +9,10 @@ const categories = [
     },
     {
         id: 3,
+        name: 'Accesorios para Celulares'
+    },
+    {
+        id: 4,
         name: 'Componentes de PC'
     }
 ];

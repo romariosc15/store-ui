@@ -1,17 +1,10 @@
-const products = [
+const featuredProducts = [
     {
         id: 1,
         name: 'Mando de PS4',
         price: 199.00,
         brand: 'PlayStation',
         src: '/products/ps4-controller.jpg'
-    },
-    {
-        id: 2,
-        name: 'Mando de Xbox',
-        price: 189.01,
-        brand: 'Microsoft',
-        src: '/products/xbox-controller.jpg'
     },
     {
         id: 3,
@@ -28,13 +21,6 @@ const products = [
         src: '/products/super-nintendo-controller.jpg'
     },
     {
-        id: 5,
-        name: 'Teclado inalámbrico Apple',
-        price: 379.01,
-        brand: 'Apple',
-        src: '/products/apple-wireless-keyboard.jpg'
-    },
-    {
         id: 6,
         name: 'Teclado personalizado gamer',
         price: 169,
@@ -47,20 +33,6 @@ const products = [
         price: 549.50,
         brand: 'Apple',
         src: '/products/pack-mouse-keyboard-apple.jpg'
-    },
-    {
-        id: 8,
-        name: 'Airpods',
-        price: 449,
-        brand: 'Apple',
-        src: '/products/airpods.jpg'
-    },
-    {
-        id: 9,
-        name: 'Audifonos blancos inalámbricos',
-        price: 69,
-        brand: 'Generic',
-        src: '/products/generic-headphones.jpg'
     }
 ];
-export default products;
+export default featuredProducts;

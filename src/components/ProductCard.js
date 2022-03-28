@@ -11,8 +11,8 @@ const ProductCard = (props) => {
                 <Text fontSize='md' color='#7e7e7e'>{product.brand}</Text>
             </Box>
             <Box display={'flex'} alignItems={'center'}>
-                <Text fontWeight={500} fontSize='lg'>{product.name}</Text>
-                <Text fontWeight={700} fontSize='xl' marginLeft={'auto'} color={'#0163d2'} >S/{product.price}</Text>
+                <Text fontWeight={500} fontSize='md' marginRight={'1rem'}>{product.name}</Text>
+                <Text fontWeight={500} fontSize='xl' marginLeft={'auto'} color={'#0163d2'} >S/{product.price}</Text>
             </Box>
         </Box>
     );
