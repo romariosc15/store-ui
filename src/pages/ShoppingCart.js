@@ -4,8 +4,12 @@ import { Box, Table, TableCaption, Thead, Tbody, Tr, Th, Td, Image, Button } fro
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
+import { useSelector } from 'react-redux'
+import { selectShoppingCart } from './../features/ShoppingCartSlice';
+
 const ShoppingCart = () => {
-    
+    const shoppingCart = useSelector(selectShoppingCart);
+    console.log(shoppingCart);
     return(
         <Fragment>
             <Breadcrumb title='Carrito de compra' routePath={['/shopping cart']} routeName={['Carrito']} />

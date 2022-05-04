@@ -6,7 +6,7 @@ const ProductCard = (props) => {
     product.price = parseFloat(product.price).toFixed(2);
     return(
         <Box>
-            <Image w={'100%'} h={'250px'} objectFit={'cover'} src={process.env.PUBLIC_URL + product.src} />
+            <Image w={'100%'} h={'250px'} objectFit={'cover'} src={process.env.PUBLIC_URL + product.src} rounded={'md'} />
             <Box marginTop={'1rem'}>
                 <Text fontSize='md' color='#7e7e7e'>{product.brand}</Text>
             </Box>
