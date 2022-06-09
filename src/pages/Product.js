@@ -1,5 +1,5 @@
 import Breadcrumb from './../components/Breadcrumb';
-import { Box, Grid, GridItem, Image, Text, Button, ButtonGroup, Input, IconButton } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Image, Text, Button, ButtonGroup, Input, IconButton, useToast } from '@chakra-ui/react';
 import { Fragment, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -13,14 +13,37 @@ import { useParams } from 'react-router-dom';
 
 const Product = () => {
     const [quantity, setQuantity] = useState(1);
+    const [isLoading, setLoading] = useState(false);
+
     let { id } = useParams();
     let data = {};
+
     const dispatch = useDispatch();
+    const toast = useToast();
+
     id = parseInt(id);
+
     products.forEach(value => {
-        if(id === value.id) data = value;
+        if(id === value.id) {
+            data = {...value};
+            data.price = parseFloat(data.price).toFixed(2);
+        };
     });
-    data.price = parseFloat(data.price).toFixed(2);
+
+    const addProductCart = () => {
+        setLoading(true);
+        data.subtotal = parseFloat(data.price * quantity).toFixed(2);
+        dispatch(addProduct({...data, quantity}));
+        setTimeout(()=>{
+            setLoading(false);
+            toast({
+                title: 'Producto agregado correctamente.',
+                position: 'top',
+                status: 'success',
+                isClosable: true,
+            });
+        }, 1000);
+    };
     return(
         <Fragment>
             <Breadcrumb title='Productos' routePath={['/products']} routeName={['Productos']} />
@@ -42,11 +65,12 @@ const Product = () => {
                             </ButtonGroup>
                         </Box>
                         <Box mt={'0.75rem'}>
-                            <Button onClick={() => dispatch(addProduct(data))} color={'#fff'} bg={'#0163d2'} size={'lg'}><FontAwesomeIcon icon={faShoppingCart} /><Text ml={'0.5rem'} fontSize={'md'}>Agregar al carrito</Text></Button>
+                            <Button w={'14rem'} isLoading={isLoading} onClick={() => addProductCart()} colorScheme='messenger' size={'lg'}><FontAwesomeIcon icon={faShoppingCart} /><Text ml={'0.5rem'} fontSize={'md'}>Agregar al carrito</Text></Button>
                         </Box>
                     </GridItem>
                 </Grid>
             </Box>
+            
         </Fragment>
         
     );

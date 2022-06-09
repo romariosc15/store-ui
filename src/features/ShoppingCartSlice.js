@@ -10,11 +10,14 @@ export const shoppingCartSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.value = [ ...state.value, action.payload]
+    },
+    deleteProduct: (state, action) => {
+      state.value = state.value.filter((v, i) => action.payload != i);
     }
   },
 });
 
-export const { addProduct } = shoppingCartSlice.actions;
+export const { addProduct, deleteProduct } = shoppingCartSlice.actions;
 
 export const selectShoppingCart = (state) => state.shoppingCart.value;
 
