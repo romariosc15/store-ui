@@ -64,7 +64,7 @@ const ShoppingCart = () => {
     }, []);
     return(
         <Fragment>
-            <Breadcrumb title='Carrito de compra' routePath={['/shopping cart']} routeName={['Carrito']} />
+            <Breadcrumb title='Carrito de compra' routePath={['/shopping-cart']} routeName={['Carrito']} />
             <Box paddingX={'8rem'} py={'6rem'}>
                 <Table variant='simple'>
                     <Thead>
