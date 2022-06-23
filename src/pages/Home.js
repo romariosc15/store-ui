@@ -6,7 +6,7 @@ const Home = () => {
     
     return(
         <Fragment>
-            <Box display={'flex'} alignItems={'center'} paddingX={'10rem'} marginBottom={'6rem'} h={'700px'} backgroundSize={'cover'} backgroundPosition={'center'} backgroundImage={process.env.PUBLIC_URL + '/home/main.jpg'}>
+            <Box display={'flex'} alignItems={'center'} paddingX={'10rem'} marginBottom={'6rem'} h={'600px'} backgroundSize={'cover'} backgroundPosition={'center'} backgroundImage={process.env.PUBLIC_URL + '/home/main.jpg'}>
                 <Box>
                     <Text fontWeight={'900'} fontSize={'6xl'}>Aumenta tu rendimiento</Text>
                     <Text fontWeight={'300'} fontSize={'3xl'}>Las mejores ofertas en accesorios, componentes y consolas de videojuegos</Text>
