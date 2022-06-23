@@ -6,11 +6,17 @@ const FeaturedProductCard = (props) => {
     product.price = parseFloat(product.price).toFixed(2);
     return(
         <Box>
-            <Box paddingBottom={'0.5rem'}>
-                <Image w={'100%'} h={'250px'} objectFit={'cover'} src={process.env.PUBLIC_URL + product.src} />
+            <Box overflow={'hidden'}>
+                <Link to={`/product/${product.id}`}>
+                    <Image className='zoom-in' w={'100%'} h={'250px'} objectFit={'cover'} src={process.env.PUBLIC_URL + product.src} />
+                </Link>
             </Box>
-            <Text textAlign={'center'} fontWeight={500} fontSize='xl' marginLeft={'auto'} color={'#0163d2'} >S/{product.price}</Text>
-            <Text textAlign={'center'} fontWeight={500} fontSize='md'>{product.name}</Text>
+            <Text marginTop={'1rem'} textAlign={'center'} fontWeight={500} fontSize='xl' marginLeft={'auto'} color={'#0163d2'} >S/{product.price}</Text>
+            <Text textAlign={'center'} fontWeight={500} fontSize='md'>
+                <Link to={`/product/${product.id}`}>
+                    {product.name}
+                </Link>
+            </Text>
             <Text textAlign={'center'} fontSize='md' color='#7e7e7e'>{product.brand}</Text>
         </Box>
     );
