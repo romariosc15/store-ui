@@ -8,9 +8,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { selectShoppingCart, deleteProduct } from './../features/ShoppingCartSlice';
 
 const ShoppingCart = () => {
+    let subtotal = 0;
     const toast = useToast();
     const deleteProductCart = (index) => {
+        subtotal -= parseFloat(shoppingCart[index].subtotal);
+        let total = subtotal - cartTotal.discount;
         dispatch(deleteProduct(index));
+        setCartTotal({...cartTotal, subtotal: subtotal, total: total});
     };
     const processShoppingCart = () => {
         setLoading(true);
@@ -26,14 +30,13 @@ const ShoppingCart = () => {
     };
     const shoppingCart = useSelector(selectShoppingCart);
     const dispatch = useDispatch();
-    let subtotal = 0;
     const [cartTotal, setCartTotal] = useState({
         subtotal: 0, discount: 0, total: 0
     });
     const [isLoading, setLoading] = useState(false);
     const [isDisabled, setDisabled] = useState(false);
     const Products = shoppingCart.map((v, i) => {
-        subtotal = parseFloat(subtotal) + parseFloat(v.subtotal);
+        subtotal += parseFloat(v.subtotal);
         return (<Tr key={v.id}>
             <Td>
                 <Image mx={'auto'} w={'100px'} objectFit={'cover'}src={process.env.PUBLIC_URL + v.src} />

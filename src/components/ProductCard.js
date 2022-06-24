@@ -20,7 +20,7 @@ const ProductCard = (props) => {
                         {product.name}
                     </Link>
                 </Text>
-                <Text fontWeight={500} fontSize='xl' marginLeft={'auto'} color={'#0163d2'} >S/{product.price}</Text>
+                <Text fontWeight={500} fontSize='xl' marginLeft={'auto'} color={'blue.500'} >S/{product.price}</Text>
             </Box>
         </Box>
     );

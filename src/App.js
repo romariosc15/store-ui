@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import ShoppingCart from './pages/ShoppingCart';
 //Components
 import Header from './components/Header';
+import Footer from './components/Footer';
 //Libraries
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/shopping-cart' element={<ShoppingCart />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

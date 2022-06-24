@@ -16,7 +16,7 @@ const Breadcrumb = (props) => {
             <Box>
                 <BreadcrumbUI fontSize={'md'}>
                     <BreadcrumbItem>
-                        <Link to={'/'}><FontAwesomeIcon color='#0163d2' icon={faHouseChimney} /></Link>
+                        <Link to={'/'}><FontAwesomeIcon color={'#0163d2'} icon={faHouseChimney} /></Link>
                     </BreadcrumbItem>
                     {path}
                 </BreadcrumbUI>
