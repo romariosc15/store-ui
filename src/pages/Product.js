@@ -70,9 +70,7 @@ const Product = () => {
                     </GridItem>
                 </Grid>
             </Box>
-            
         </Fragment>
-        
     );
 };
 export default Product;

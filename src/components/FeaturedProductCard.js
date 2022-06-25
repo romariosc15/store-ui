@@ -5,7 +5,7 @@ const FeaturedProductCard = (props) => {
     const product = props.product;
     product.price = parseFloat(product.price).toFixed(2);
     return(
-        <Box paddingBottom={{'xl':'3rem', '2xl':'3rem'}}>
+        <Box paddingBottom={{'base':'3rem', 'md':'3rem', 'lg':'2rem', 'xl':'3rem', '2xl':'3rem'}}>
             <Box overflow={'hidden'}>
                 <Link to={`/product/${product.id}`}>
                     <Image className='zoom-in' w={'100%'} h={'250px'} objectFit={'cover'} src={process.env.PUBLIC_URL + product.src} />

@@ -6,8 +6,8 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return(
-        <Box paddingX={'12rem'} paddingY={'1.5rem'} textAlign={'center'} borderTopColor={'gray.50'} borderTopWidth={'1px'}>
-            <Text fontSize={'sm'} fontWeight={'300'} color={'gray.700'}>2022, Tienda Virtual. Desarrollado por Romario Sarmiento.</Text>
+        <Box paddingX={{'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}} paddingY={{'base':'0.75rem', 'md':'1rem', 'lg':'1.25rem', 'xl':'1.25rem', '2xl':'1.5rem'}} textAlign={'center'} borderTopColor={'gray.50'} borderTopWidth={'1px'}>
+            <Text fontSize={{'base': 'xs', 'md':'sm', 'lg':'sm', '2xl':'md'}} fontWeight={'300'} color={'gray.700'}>2022, Tienda Virtual. Desarrollado por Romario Sarmiento.</Text>
         </Box>
     );
 };
