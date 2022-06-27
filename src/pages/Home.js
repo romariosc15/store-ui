@@ -22,7 +22,7 @@ const Home = () => {
                     <FeaturedProducts />
                 </Box>
             </Box>
-            <Box paddingX={{'base':'2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}} backgroundColor={'gray.50'} paddingY={{'base':'2rem', 'md':'3rem', 'lg':'4rem', 'xl':'5rem', '2xl':'6rem'}} display={'flex'} alignItems={'center'} justifyContent={'space-between'} flexDirection={{'base': 'column', 'md': 'row'}}>
+            <Box paddingX={{'base':'2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}} backgroundColor={'gray.100'} paddingY={{'base':'2rem', 'md':'3rem', 'lg':'4rem', 'xl':'5rem', '2xl':'6rem'}} display={'flex'} alignItems={'center'} justifyContent={'space-between'} flexDirection={{'base': 'column', 'md': 'row'}}>
                 <Newsletter />
             </Box>
         </Fragment>

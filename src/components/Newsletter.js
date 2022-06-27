@@ -11,8 +11,8 @@ const Newsletter = () => {
                 <Text fontWeight={'500'} fontSize={{'base':'lg', 'md':'xl', 'lg':'xl', 'xl':'2xl', '2xl':'3xl'}}>Suscríbete a nuestro boletín</Text>
                 <Text fontWeight={'300'} fontSize={{'base':'sm', 'md':'sm', 'lg':'sm', 'xl':'md', '2xl':'lg'}}>Suscríbete para recibir los mejores descuentos y novedades de la tienda.</Text>
             </Box>
-            <Box display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                <Input type={'email'} w={{'lg':'16rem', 'xl':'18rem', '2xl':'20rem'}} backgroundColor={'white'} size={size} placeholder={'Ingresa tu email'} borderRightRadius={'none'} />
+            <Box display={'flex'} alignItems={'center'} justifyContent={'center'} w={{'base': '100%', 'sm': 'auto'}}>
+                <Input type={'email'} w={{'base': '100%', 'lg':'16rem', 'xl':'18rem', '2xl':'20rem'}} backgroundColor={'white'} size={size} placeholder={'Ingresa tu email'} borderRightRadius={'none'} />
                 <IconButton colorScheme={'messenger'} size={size} aria-label='Seguimiento' borderLeftRadius={'none'} icon={<FontAwesomeIcon icon={faEnvelope} />} />
             </Box>
         </Fragment>

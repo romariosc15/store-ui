@@ -47,8 +47,8 @@ const Product = () => {
     return(
         <Fragment>
             <Breadcrumb title='Productos' routePath={['/products']} routeName={['Productos']} />
-            <Box paddingY={'4rem'} paddingX={'8rem'}>
-                <Grid px={'4rem'} templateColumns='repeat(2, 1fr)' gap={6}>
+            <Box paddingY={'4rem'} paddingX={{'base': '2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}}>
+                <Grid templateColumns={{'base': 'repeat(1, 1fr)', 'md':'repeat(2, 1fr)'}} gap={6}>
                     <GridItem>
                         <Image w={'100%'} objectFit={'cover'} src={process.env.PUBLIC_URL + data.src} rounded={'md'} />
                     </GridItem>
