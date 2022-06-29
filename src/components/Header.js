@@ -1,4 +1,4 @@
-import { Button, Box, Heading, Text, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody } from '@chakra-ui/react';
+import { Box, Heading, Text, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody } from '@chakra-ui/react';
 import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
@@ -15,8 +15,10 @@ const Header = () => {
     };
     return(
         <Fragment>
-            <Box paddingX={{'md':'2rem', 'lg':'4rem', 'xl':'5rem', '2xl':'8rem'}} paddingY={{'md':'1rem', 'lg':'1.25rem', 'xl':'1.25rem', '2xl':'1.5rem'}} display={{'base': 'none', 'md': 'flex'}} flexDirection={'row'} alignItems={'center'}>
-                <Heading size={'md'} fontWeight={'800'}>Tienda</Heading>
+            <Box paddingX={{'md':'2rem', 'lg':'4rem', 'xl':'5rem', '2xl':'8rem'}} paddingY={{'md':'1rem', 'lg':'1.25rem', 'xl':'1.25rem', '2xl':'1.5rem'}} display={{'base': 'none', 'md': 'flex'}} flexDirection={'row'} alignItems={'center'} boxShadow={'md'}>
+                <Heading size={'md'} fontWeight={'800'}>
+                    <Link to="/">Tienda</Link>
+                </Heading>
                 <Box marginLeft={'4rem'}>
                     <Text fontSize={{'md': 'sm', 'lg': 'sm', 'xl': 'md', '2xl':'md'}} fontWeight={'500'} display={'inline-block'} marginX={'1.5rem'}>
                         <Link to="/">Inicio</Link>
@@ -29,7 +31,7 @@ const Header = () => {
                     </Text>
                 </Box>
                 <Box marginLeft={'auto'}>
-                    <Box display={'inline-block'} fontSize={{'md': 'sm', 'lg': 'sm', 'xl': 'md', '2xl':'md'}} marginRight={'1rem'}>
+                    <Box display={'inline-block'} fontSize={{'md': 'sm', 'lg': 'sm', 'xl': 'md', '2xl':'md'}} marginRight={'1.5rem'}>
                         <Link to="/login">
                             <FontAwesomeIcon icon={faUser} />
                         </Link>
@@ -41,8 +43,10 @@ const Header = () => {
                     </Box>
                 </Box>
             </Box>
-            <Box paddingX={'2rem'} paddingY={'1rem'} display={{'base': 'flex', 'md': 'none'}} flexDirection={'row'} justifyContent={'space-between'}>
-                <Heading size={'sm'} fontWeight={'800'}>Tienda</Heading>
+            <Box paddingX={'2rem'} paddingY={'1rem'} display={{'base': 'flex', 'md': 'none'}} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} boxShadow={'md'}>
+                <Heading size={'sm'} fontWeight={'800'}>
+                    <Link to="/">Tienda</Link>
+                </Heading>
                 <Box ref={btnRef}>
                     <FontAwesomeIcon icon={faBars} onClick={onOpen} />
                 </Box>
@@ -55,16 +59,24 @@ const Header = () => {
                     <DrawerOverlay />
                     <DrawerContent>
                         <DrawerCloseButton />
-                        <DrawerHeader>MENÚ</DrawerHeader>
+                        <DrawerHeader borderBottomWidth={'1px'} borderBottomColor={'gray.100'}>
+                            MENÚ
+                        </DrawerHeader>
                         <DrawerBody>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.25rem'} onClick={() => redirectTo('/')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/')}>
                                 Inicio
                             </Text>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.25rem'} onClick={() => redirectTo('/products')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/products')}>
                                 Productos
                             </Text>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.25rem'} onClick={() => redirectTo('/order-tracking')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/order-tracking')}>
                                 Seguimiento
+                            </Text>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/login')}>
+                                Login
+                            </Text>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/shopping-cart')}>
+                                Carrito
                             </Text>
                         </DrawerBody>
                     </DrawerContent>

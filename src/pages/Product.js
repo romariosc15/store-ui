@@ -47,14 +47,14 @@ const Product = () => {
     return(
         <Fragment>
             <Breadcrumb title='Productos' routePath={['/products']} routeName={['Productos']} />
-            <Box paddingY={'4rem'} paddingX={{'base': '2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}}>
+            <Box paddingY={'4rem'} paddingX={{'base': '2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}} minHeight={'65vh'}>
                 <Grid templateColumns={{'base': 'repeat(1, 1fr)', 'md':'repeat(2, 1fr)'}} gap={6}>
                     <GridItem>
                         <Image w={'100%'} objectFit={'cover'} src={process.env.PUBLIC_URL + data.src} rounded={'md'} />
                     </GridItem>
-                    <GridItem>
+                    <GridItem textAlign={{'base':'center', 'md': 'left'}}>
                         <Text color={'#212529'} fontSize={'2xl'} fontWeight={'600'}>{data.name}</Text>
-                        <Text mt={'0.25rem'} fontSize={'md'} fontWeight={'400'}>Accesorios</Text>
+                        <Text fontSize={'md'} fontWeight={'400'}>Accesorios</Text>
                         <Text color={'#212529'} mt={'0.25rem'} fontSize={'2xl'} fontWeight={'400'}>S/{data.price}</Text>
                         <Box mt={'0.75rem'}>
                             <Text fontSize={'md'} fontWeight={'500'}>Quantity</Text>
@@ -65,7 +65,9 @@ const Product = () => {
                             </ButtonGroup>
                         </Box>
                         <Box mt={'0.75rem'}>
-                            <Button w={'14rem'} isLoading={isLoading} onClick={() => addProductCart()} colorScheme='messenger' size={'lg'}><FontAwesomeIcon icon={faShoppingCart} /><Text ml={'0.5rem'} fontSize={'md'}>Agregar al carrito</Text></Button>
+                            <Button w={'14rem'} isLoading={isLoading} onClick={() => addProductCart()} colorScheme='messenger' size={'lg'}>
+                                <FontAwesomeIcon icon={faShoppingCart} />&nbsp;&nbsp;&nbsp;Agregar al Carrito
+                            </Button>
                         </Box>
                     </GridItem>
                 </Grid>

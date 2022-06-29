@@ -13,7 +13,7 @@ const Home = () => {
                     <Text fontWeight={'900'} fontSize={{'base':'lg', 'md': '2xl', 'lg': '3xl', 'xl': '4xl', '2xl':'6xl'}}>Aumenta tu rendimiento</Text>
                     <Text fontWeight={'300'} fontSize={{'base':'xs', 'md': 'sm', 'lg': 'lg', 'xl': 'xl', '2xl':'3xl'}}>Las mejores ofertas en accesorios, componentes y consolas de videojuegos</Text>
                     <Button marginTop={{'base':'0.5rem', 'md':'0.75rem', 'lg':'1rem', 'xl':'1.5rem'}} colorScheme='messenger' size={size}>
-                        <Text fontSize={{'base':'xs', 'md':'xs', 'lg':'sm', 'xl':'md'}}>VER OFERTAS</Text>
+                        VER OFERTAS
                     </Button>
                 </Box>
             </Box>
@@ -22,7 +22,7 @@ const Home = () => {
                     <FeaturedProducts />
                 </Box>
             </Box>
-            <Box paddingX={{'base':'2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}} backgroundColor={'gray.100'} paddingY={{'base':'2rem', 'md':'3rem', 'lg':'4rem', 'xl':'5rem', '2xl':'6rem'}} display={'flex'} alignItems={'center'} justifyContent={'space-between'} flexDirection={{'base': 'column', 'md': 'row'}}>
+            <Box paddingX={{'base':'2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}} backgroundColor={'gray.100'} paddingY={{'base':'3rem', 'md':'3rem', 'lg':'3.5rem', 'xl':'4rem', '2xl':'4.5rem'}} display={'flex'} alignItems={'center'} justifyContent={'space-between'} flexDirection={{'base': 'column', 'md': 'row'}}>
                 <Newsletter />
             </Box>
         </Fragment>

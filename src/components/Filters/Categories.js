@@ -1,11 +1,13 @@
-import { Box, Text, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Checkbox } from '@chakra-ui/react';
+import { Box, Text, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Checkbox, Grid, GridItem } from '@chakra-ui/react';
 
 const Categories = (props) => {
     const categories = props.categories;
     const Checkboxes = categories.map((v) =>
-        <Checkbox key={v.id}>
-            <Text fontSize={'sm'}>{v.name}</Text>
-        </Checkbox>
+        <GridItem key={v.id}>
+            <Checkbox>
+                <Text fontSize={'sm'}>{v.name}</Text>
+            </Checkbox>
+        </GridItem>
     );
     return(
         <Box p={'1.5rem'} border={'1px solid #ced4da'} rounded={'md'}>
@@ -18,7 +20,9 @@ const Categories = (props) => {
                         <AccordionIcon />
                     </AccordionButton>
                     <AccordionPanel pt={4} pb={0}>
-                        {Checkboxes}
+                        <Grid templateColumns={{'base':'repeat(1, 1fr)', 'md':'repeat(2, 1fr)', 'lg':'repeat(1, 1fr)', 'xl':'repeat(1, 1fr)'}}>
+                            {Checkboxes}
+                        </Grid>
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>

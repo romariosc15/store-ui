@@ -11,7 +11,7 @@ const Breadcrumb = (props) => {
         </BreadcrumbItem>
     );
     return(
-        <Box paddingY={{'base': '2.5rem', 'lg': '3.5rem', 'xl': '4rem', '2xl': '5rem'}} backgroundColor={'#eff2f7'} display="flex" alignItems={'center'} flexDirection={'column'} justifyContent={'center'}>
+        <Box paddingY={{'base': '3rem', 'lg': '3.5rem', 'xl': '4rem', '2xl': '5rem'}} backgroundColor={'gray.100'} display="flex" alignItems={'center'} flexDirection={'column'} justifyContent={'center'}>
             <Text color={'#212529'} fontSize={{'base': '2xl', 'md': '3xl'}} fontWeight={500}>{ title }</Text>
             <Box>
                 <BreadcrumbUI fontSize={{'base': 'sm', 'md': 'md'}}>
