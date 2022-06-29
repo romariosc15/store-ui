@@ -63,19 +63,19 @@ const Header = () => {
                             MENÚ
                         </DrawerHeader>
                         <DrawerBody>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.75rem'} onClick={() => redirectTo('/')}>
                                 Inicio
                             </Text>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/products')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.75rem'} onClick={() => redirectTo('/products')}>
                                 Productos
                             </Text>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/order-tracking')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.75rem'} onClick={() => redirectTo('/order-tracking')}>
                                 Seguimiento
                             </Text>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/login')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.75rem'} onClick={() => redirectTo('/login')}>
                                 Login
                             </Text>
-                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.5rem'} onClick={() => redirectTo('/shopping-cart')}>
+                            <Text cursor={'pointer'} fontSize={'lg'} fontWeight={'500'} marginY={'0.75rem'} onClick={() => redirectTo('/shopping-cart')}>
                                 Carrito
                             </Text>
                         </DrawerBody>

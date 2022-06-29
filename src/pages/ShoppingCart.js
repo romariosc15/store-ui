@@ -1,10 +1,10 @@
 import { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from './../components/Breadcrumb';
-import { Box, Table, Thead, Tbody, Tr, Th, Td, Image, Button, Text, Grid, GridItem, useToast } from '@chakra-ui/react';
+import { Box, Table, Thead, Tbody, Tr, Th, Td, Image, Button, Text, Grid, GridItem, useToast, TableContainer } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { selectShoppingCart, deleteProduct } from './../features/ShoppingCartSlice';
 
 const ShoppingCart = () => {
@@ -68,24 +68,26 @@ const ShoppingCart = () => {
     return(
         <Fragment>
             <Breadcrumb title='Carrito de compra' routePath={['/shopping-cart']} routeName={['Carrito']} />
-            <Box paddingX={'8rem'} py={'6rem'}>
-                <Table variant='simple'>
-                    <Thead>
-                        <Tr backgroundColor={'#eff2f7'}>
-                            <Th w={'15%'} textAlign={'center'}>Imagen</Th>
-                            <Th w={'30%'}>Nombre del Producto</Th>
-                            <Th w={'15%'} textAlign={'center'}>Precio</Th>
-                            <Th w={'10%'} textAlign={'center'}>Cantidad</Th>
-                            <Th w={'15%'} textAlign={'center'}>Acción</Th>
-                            <Th w={'15%'} textAlign={'center'}>Total</Th>
-                        </Tr>
-                    </Thead>
-                    <Tbody>
-                        {shoppingCart.length > 0 ? Products : EmptyCar}
-                    </Tbody>
-                </Table>
+            <Box paddingX={{'base': '2rem', 'md':'4rem', 'lg':'6rem', 'xl':'8rem', '2xl':'12rem'}} py={'6rem'}>
+                <TableContainer>
+                    <Table variant='simple'>
+                        <Thead>
+                            <Tr backgroundColor={'#eff2f7'}>
+                                <Th w={'15%'} textAlign={'center'}>Imagen</Th>
+                                <Th w={'30%'}>Nombre del Producto</Th>
+                                <Th w={'15%'} textAlign={'center'}>Precio</Th>
+                                <Th w={'10%'} textAlign={'center'}>Cantidad</Th>
+                                <Th w={'15%'} textAlign={'center'}>Acción</Th>
+                                <Th w={'15%'} textAlign={'center'}>Total</Th>
+                            </Tr>
+                        </Thead>
+                        <Tbody>
+                            {shoppingCart.length > 0 ? Products : EmptyCar}
+                        </Tbody>
+                    </Table>
+                </TableContainer>
                 <Box display={'flex'} alignItems={'end'} py={'3rem'} flexDir={'column'} flexWrap={'wrap'}>
-                    <Box borderRadius={'md'} borderBottomRadius={'none'} paddingX={'1rem'} paddingY={'1.5rem'} backgroundColor={'#eff2f7'} w={'25%'}>
+                    <Box borderRadius={'md'} borderBottomRadius={'none'} paddingX={'1rem'} paddingY={'1.5rem'} backgroundColor={'#eff2f7'} w={{'base': '100%', 'sm': '75%', 'md': '60%', 'lg': '45%', 'xl': '35%', '2xl':'30%'}}>
                         <Text fontSize={'lg'} fontWeight={500}>Total del Carrito</Text>
                         <Grid marginTop={'1rem'} templateColumns='repeat(2, 1fr)' columnGap={6} rowGap={1}>
                             <GridItem>
@@ -108,8 +110,8 @@ const ShoppingCart = () => {
                             </GridItem>
                         </Grid>
                     </Box>
-                    <Button isDisabled={isDisabled} borderTopRadius={'none'} isLoading={isLoading} colorScheme='messenger' onClick={() => processShoppingCart()} size={'lg'} w={'25%'}>
-                        <Text ml={'0.5rem'} fontSize={'md'}>Procesar Carrito</Text>
+                    <Button isDisabled={isDisabled} borderTopRadius={'none'} isLoading={isLoading} colorScheme='messenger' onClick={() => processShoppingCart()} size={'lg'} w={{'base': '100%', 'sm': '75%', 'md': '60%', 'lg': '45%', 'xl': '35%', '2xl':'30%'}}>
+                        Procesar Carrito
                     </Button>
                 </Box>
             </Box>
